@@ -22,10 +22,6 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             InitializeComponent();
         }
 
-        public static void DoWork()
-        {
-            Console.WriteLine("Login out...");
-        }
 
         private void loginAndInit()
         {
@@ -62,9 +58,24 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         private void fetchUserInfo()
         {
             profilePicture.LoadAsync(m_LoggedInUser.PictureNormalURL);
-
             postBox.Text = m_LoggedInUser.Name;
-           
+            nameLabel.Text = String.Format("Hi, {0}", m_LoggedInUser.Name);  
+        }
+
+        private void fetchFriends()
+        {
+            friendsListBox.Items.Clear();
+            friendsListBox.DisplayMember = "Name";
+            foreach (User friend in m_LoggedInUser.Friends)
+            {
+                friendsListBox.Items.Add(friend);
+                friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
+            }
+
+            if (m_LoggedInUser.Friends.Count == 0)
+            {
+                MessageBox.Show("No Friends to retrieve :(");
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -76,6 +87,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         {
             loginAndInit();
             fetchUserInfo();
+            fetchFriends();
         }
 
         private void profilePicture_Click(object sender, EventArgs e)
@@ -99,6 +111,12 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         }
 
         private void ProfilePic_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
