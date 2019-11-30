@@ -46,10 +46,10 @@
             this.friendsListBox = new System.Windows.Forms.ListBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonCityFriends = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listBoxFeature2 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -165,10 +165,10 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.listBox2);
+            this.tabPage2.Controls.Add(this.listBoxFeature2);
             this.tabPage2.Controls.Add(this.listBox1);
             this.tabPage2.Controls.Add(this.progressBar1);
-            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.buttonCityFriends);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
