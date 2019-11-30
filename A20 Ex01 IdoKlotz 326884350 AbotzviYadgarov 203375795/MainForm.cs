@@ -78,6 +78,50 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             }
         }
 
+        private void findFriendsByFirstName(string i_Name)
+        {
+            string name = i_Name;
+
+            toUnfriendListBox.Items.Clear();
+            toUnfriendListBox.DisplayMember = "Name";
+            foreach (User friend in m_LoggedInUser.Friends)
+            {
+                if (friend.FirstName.Equals(name)) { 
+                    toUnfriendListBox.Items.Add(friend);
+                    friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
+                    }
+            }
+
+            if (toUnfriendListBox.Items.Count == 0)
+            {
+                MessageBox.Show("You don't have any friends with this name");
+            }
+        }
+
+        private void friendsToUnfriend()
+        {
+            toUnfriendListBox.Items.Clear();
+            toUnfriendListBox.DisplayMember = "Name";
+
+
+            foreach (User friend in m_LoggedInUser.Friends)
+            {
+                foreach(Page page in friend.LikedPages)
+                {
+                    if (page.Id.Equals("6248267085")) //Nickelbacks facebook page
+                    {
+                        toUnfriendListBox.Items.Add(friend);
+                        friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
+                    }
+                }
+            }
+
+            if (toUnfriendListBox.Items.Count == 0)
+            {
+                MessageBox.Show("No suggestions, your friends are great!");
+            }
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
 
@@ -119,6 +163,12 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonFriendsToUnfriend_Click(object sender, EventArgs e)
+        {
+            buttonFriendsToUnfriend.Text = "Friends who like Nickelback";
+            friendsToUnfriend();
         }
     }
 }
