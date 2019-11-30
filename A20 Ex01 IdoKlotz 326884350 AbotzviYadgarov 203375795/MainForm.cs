@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,8 +15,8 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
     public partial class MainForm : Form
     {
         User m_LoggedInUser;
-     
-       
+
+
         public MainForm()
         {
             InitializeComponent();
@@ -59,7 +59,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         {
             profilePicture.LoadAsync(m_LoggedInUser.PictureNormalURL);
             postBox.Text = m_LoggedInUser.Name;
-            nameLabel.Text = String.Format("Hi, {0}", m_LoggedInUser.Name);  
+            nameLabel.Text = String.Format("Hi, {0}", m_LoggedInUser.Name);
         }
 
         private void fetchFriends()
@@ -78,6 +78,50 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             }
         }
 
+        private void findFriendsByFirstName(string i_Name)
+        {
+            string name = i_Name;
+
+            toUnfriendListBox.Items.Clear();
+            toUnfriendListBox.DisplayMember = "Name";
+            foreach (User friend in m_LoggedInUser.Friends)
+            {
+                if (friend.FirstName.Equals(name)) {
+                    toUnfriendListBox.Items.Add(friend);
+                    friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
+                }
+            }
+
+            if (toUnfriendListBox.Items.Count == 0)
+            {
+                MessageBox.Show("You don't have any friends with this name");
+            }
+        }
+
+        private void friendsToUnfriend()
+        {
+            toUnfriendListBox.Items.Clear();
+            toUnfriendListBox.DisplayMember = "Name";
+
+
+            foreach (User friend in m_LoggedInUser.Friends)
+            {
+                foreach (Page page in friend.LikedPages)
+                {
+                    if (page.Id.Equals("6248267085")) //Nickelbacks facebook page
+                    {
+                        toUnfriendListBox.Items.Add(friend);
+                        friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
+                    }
+                }
+            }
+
+            if (toUnfriendListBox.Items.Count == 0)
+            {
+                MessageBox.Show("No suggestions, your friends are great!");
+            }
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
 
@@ -92,7 +136,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
 
         private void profilePicture_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -120,41 +164,49 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         {
 
         }
-        
+
+        private void buttonFriendsToUnfriend_Click(object sender, EventArgs e)
+        {
+            buttonFriendsToUnfriend.Text = "Friends who like Nickelback";
+            friendsToUnfriend();
+        }
+
         private void buttonCityFriends_Click(object sender, EventArgs e)
         {
             fetchCitiesFriends();
         }
-        
+
         private void fetchCitiesFriends()
         {
-            listBoxFeature2.Items.Clear();
-            listBoxFeature2.DisplayMember = "Name";
-            Dictionary<String, int> citiesDict = new Dictionary<String, int>();
-
-            foreach (User friend in m_LoggedInUser.Friends)
-            {
-                if (citiesDict.ContainsKey(friend.Location.Location.City))
-                {
-                    citiesDict[friend.Location.Location.City] += 1;
-                }
-                else
-                {
-                    citiesDict.Add(friend.Location.Location.City, 0);
-                }
-            }
-
-            listBoxFeature2.Items.Add("The cities of your friends and amount:");
-            foreach (KeyValuePair<String, int> entry in citiesDict)
-            {
-                listBoxFeature2.Items.Add(String.Format("{0} there are {1} friends", entry.Key, entry.Value));
-            }
-
-               
+            toSeeCitiesListBox.Items.Clear();
+            toSeeCitiesListBox.DisplayMember = "Name";
+         
             if (m_LoggedInUser.Friends.Count == 0)
             {
-                listBoxFeature2.Items.Add("No Friends to retrieve :(");
+                MessageBox.Show("No cities to show, you have no friends :(");
             }
-         }
+            else
+            {
+                Dictionary<String, int> citiesDict = new Dictionary<String, int>();
+
+                foreach (User friend in m_LoggedInUser.Friends)
+                {
+                    if (citiesDict.ContainsKey(friend.Location.Location.City))
+                    {
+                        citiesDict[friend.Location.Location.City] += 1;
+                    }
+                    else
+                    {
+                        citiesDict.Add(friend.Location.Location.City, 0);
+                    }
+                }
+
+                toSeeCitiesListBox.Items.Add("The cities of your friends and amount:");
+                foreach (KeyValuePair<String, int> entry in citiesDict)
+                {
+                    toSeeCitiesListBox.Items.Add(String.Format("{0} there are {1} friends", entry.Key, entry.Value));
+                }
+            }
+        }
     }
 }
