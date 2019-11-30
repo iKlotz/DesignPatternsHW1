@@ -120,5 +120,40 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         {
 
         }
+        
+        private void buttonCityFriends_Click(object sender, EventArgs e)
+        {
+            fetchCitiesFriends();
+        }
+        
+        private void fetchCitiesFriends()
+        {
+            listBoxFeature2.Items.Clear();
+            listBoxFeature2.DisplayMember = "Name";
+            Dictionary<String, int> citiesDict = new Dictionary<String, int>();
+
+            foreach (User friend in m_LoggedInUser.Friends)
+            {
+                if (citiesDict.ContainsKey(friend.Location.Location.City))
+                {
+                    citiesDict[friend.Location.Location.City] += 1;
+                }
+                else
+                {
+                    citiesDict.Add(friend.Location.Location.City, 0);
+                }
+            }
+
+            listBoxFeature2.Items.Add("The cities of your friends and amount:");
+            foreach (KeyValuePair<String, int> entry in citiesDict)
+            {
+                listBoxFeature2.Items.Add(String.Format("{0} there are {1} friends", entry.Key, entry.Value));
+            }
+
+               
+            if (m_LoggedInUser.Friends.Count == 0)
+            {
+                listBoxFeature2.Items.Add("No Friends to retrieve :(");
+            }
     }
 }
