@@ -246,17 +246,19 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // buttonCityFriends
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(539, 95);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(404, 41);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = false;
+            this.buttonCityFriends.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
+            this.buttonCityFriends.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonCityFriends.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonCityFriends.Location = new System.Drawing.Point(359, 62);
+            this.buttonCityFriends.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCityFriends.Name = "buttonCityFriends";
+            this.buttonCityFriends.Size = new System.Drawing.Size(269, 27);
+            this.buttonCityFriends.TabIndex = 1;
+            this.buttonCityFriends.Text = "Press to see friend\'s cities";
+            this.buttonCityFriends.UseVisualStyleBackColor = false;
+            this.buttonCityFriends.Click += new System.EventHandler(this.buttonCityFriends_Click);
             // 
             // progressBar1
             // 
@@ -274,14 +276,14 @@
             this.listBox1.Size = new System.Drawing.Size(404, 364);
             this.listBox1.TabIndex = 3;
             // 
-            // listBox2
+            // listBoxFeature2
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(539, 142);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(404, 364);
-            this.listBox2.TabIndex = 4;
+            this.listBoxFeature2.FormattingEnabled = true;
+            this.listBoxFeature2.Location = new System.Drawing.Point(359, 92);
+            this.listBoxFeature2.Margin = new System.Windows.Forms.Padding(2);
+            this.listBoxFeature2.Name = "listBoxFeature2";
+            this.listBoxFeature2.Size = new System.Drawing.Size(271, 238);
+            this.listBoxFeature2.TabIndex = 4;
             // 
             // MainForm
             // 
@@ -322,11 +324,12 @@
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.ListBox friendsListBox;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox listBoxFeature2;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonCityFriends;
         private System.Windows.Forms.Button button1;
+        
     }
 }
 
