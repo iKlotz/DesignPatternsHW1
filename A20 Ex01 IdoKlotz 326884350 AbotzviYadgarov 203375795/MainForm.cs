@@ -58,8 +58,15 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         private void fetchUserInfo()
         {
             profilePicture.LoadAsync(m_LoggedInUser.PictureNormalURL);
-            postBox.Text = m_LoggedInUser.Name;
             nameLabel.Text = String.Format("Hi, {0}", m_LoggedInUser.Name);
+        }
+
+        private void fetchCover()
+        {
+            if(m_LoggedInUser.Cover.SourceURL != null)
+            {
+                coverPicture.LoadAsync(m_LoggedInUser.Cover.SourceURL);
+            }    
         }
 
         private void fetchFriends()
@@ -132,6 +139,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             loginAndInit();
             fetchUserInfo();
             fetchFriends();
+            fetchPosts();
         }
 
         private void profilePicture_Click(object sender, EventArgs e)
@@ -168,11 +176,13 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         private void buttonFriendsToUnfriend_Click(object sender, EventArgs e)
         {
             buttonFriendsToUnfriend.Text = "Friends who like Nickelback";
+            progressBar1.Increment(100);
             friendsToUnfriend();
         }
 
         private void buttonCityFriends_Click(object sender, EventArgs e)
         {
+            progressBar2.Increment(100);
             fetchCitiesFriends();
         }
 
@@ -207,6 +217,57 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
                     toSeeCitiesListBox.Items.Add(String.Format("{0} there are {1} friends", entry.Key, entry.Value));
                 }
             }
+        }
+
+        private void postBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fetchPosts()
+        {
+            postBox.Items.Clear();
+
+            foreach (User friend in m_LoggedInUser.Friends)
+            {
+                postBox.Items.Add(friend.Posts[0]);
+                friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
+            }
+
+            if (postBox.Items.Count == 0)
+            {
+                postBox.Items.Add("No friends, no posts, no problem!");
+            }
+        }
+
+        private void postBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void myPostBox_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            postBox.Items.Add(myPostBox.Text);
         }
     }
 }
