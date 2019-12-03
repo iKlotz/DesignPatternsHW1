@@ -244,9 +244,15 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
 
         private void publishPostButton_Click(object sender, EventArgs e)
         {
-            m_LoggedInUser.PostStatus(myPostBox.Text);
-            //Next line would publish our post to the server if facebook won't change privacy policy 
-            //postBox.Items.Add(myPostBox.Text);
+            try
+            {
+                m_LoggedInUser.PostStatus(myPostBox.Text);
+                //Next line would publish our post to the server if facebook won't change privacy policy 
+                //postBox.Items.Add(myPostBox.Text);
+            } catch (Exception exception)
+            {
+                MessageBox.Show("Please sign in first");
+            }
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)

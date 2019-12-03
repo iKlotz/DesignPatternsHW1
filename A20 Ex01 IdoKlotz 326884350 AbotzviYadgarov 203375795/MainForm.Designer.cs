@@ -34,6 +34,9 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.friendsLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.eventsListBox = new System.Windows.Forms.ListBox();
             this.publishPostButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,9 +58,6 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.buttonFriendsToUnfriend = new System.Windows.Forms.Button();
             this.buttonCityFriends = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.friendsLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -140,6 +140,37 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.tabPage1.Text = "Welcome!";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // friendsLabel
+            // 
+            this.friendsLabel.AutoSize = true;
+            this.friendsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.friendsLabel.Location = new System.Drawing.Point(880, 122);
+            this.friendsLabel.Name = "friendsLabel";
+            this.friendsLabel.Size = new System.Drawing.Size(138, 22);
+            this.friendsLabel.TabIndex = 21;
+            this.friendsLabel.Text = "Your friends are";
+            this.friendsLabel.Click += new System.EventHandler(this.friendsLabel_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label5.Location = new System.Drawing.Point(443, 188);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(111, 25);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "News Feed";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label4.Location = new System.Drawing.Point(443, 408);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 25);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Events";
             // 
             // eventsListBox
             // 
@@ -355,40 +386,9 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.buttonCityFriends.Name = "buttonCityFriends";
             this.buttonCityFriends.Size = new System.Drawing.Size(380, 42);
             this.buttonCityFriends.TabIndex = 0;
-            this.buttonCityFriends.Text = "Press to see friend\'s cities";
+            this.buttonCityFriends.Text = "Press to See Your Friend\'s Cities";
             this.buttonCityFriends.UseVisualStyleBackColor = false;
             this.buttonCityFriends.Click += new System.EventHandler(this.buttonCityFriends_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(443, 408);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 25);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Events";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(443, 188);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 25);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "News Feed";
-            // 
-            // friendsLabel
-            // 
-            this.friendsLabel.AutoSize = true;
-            this.friendsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.friendsLabel.Location = new System.Drawing.Point(880, 122);
-            this.friendsLabel.Name = "friendsLabel";
-            this.friendsLabel.Size = new System.Drawing.Size(138, 22);
-            this.friendsLabel.TabIndex = 21;
-            this.friendsLabel.Text = "Your friends are";
-            this.friendsLabel.Click += new System.EventHandler(this.friendsLabel_Click);
             // 
             // MainForm
             // 
