@@ -16,12 +16,15 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
     {
         User m_LoggedInUser;
 
-
         public MainForm()
         {
             InitializeComponent();
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
 
         private void loginAndInit()
         {
@@ -85,7 +88,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             }
         }
 
-        private void findFriendsByFirstName(string i_Name)
+       /* private void findFriendsByFirstName(string i_Name)
         {
             string name = i_Name;
 
@@ -103,7 +106,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             {
                 MessageBox.Show("You don't have any friends with this name");
             }
-        }
+        }*/
 
         private void friendsToUnfriend()
         {
@@ -115,7 +118,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             {
                 foreach (Page page in friend.LikedPages)
                 {
-                    if (page.Id.Equals("6248267085")) //Nickelbacks facebook page
+                    if (page.Id.Equals("6248267085")) //Nickelback facebook page
                     {
                         toUnfriendListBox.Items.Add(friend);
                         friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
@@ -129,17 +132,13 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             }
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             loginAndInit();
             fetchUserInfo();
             fetchFriends();
             fetchPosts();
+            fetchEvents();
         }
 
         private void profilePicture_Click(object sender, EventArgs e)
@@ -265,9 +264,55 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
           
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void publishPostButton_Click(object sender, EventArgs e)
         {
-            postBox.Items.Add(myPostBox.Text);
+            m_LoggedInUser.PostStatus(myPostBox.Text);
+            //Next line would publish our post to the server if facebook won't change privacy policy 
+            //postBox.Items.Add(myPostBox.Text);
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            eventsListBox.Items.Clear();
+            foreach (Event usersEvent in m_LoggedInUser.Events)
+            {
+                if (usersEvent.StartTime.Equals(e.Start)){
+                    eventsListBox.Items.Add(usersEvent.ToString());
+                    usersEvent.ReFetch(DynamicWrapper.eLoadOptions.Full);
+                }
+            }
+
+            if (eventsListBox.Items.Count == 0)
+            {
+                eventsListBox.Items.Add("There are no events for selected date");
+            }
+        }
+
+        private void eventsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void fetchEvents()
+        {
+            eventsListBox.Items.Clear();
+
+            foreach (Event usersEvent in m_LoggedInUser.Events)
+            {
+                eventsListBox.Items.Add(usersEvent.ToString());
+                usersEvent.ReFetch(DynamicWrapper.eLoadOptions.Full);
+            }
+
+            if (eventsListBox.Items.Count == 0)
+            {
+                eventsListBox.Items.Add("There are no events near you");
+            }
+        }
+
+        private void friendsLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
