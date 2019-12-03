@@ -58,6 +58,15 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             }
         }
 
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            loginAndInit();
+            fetchUserInfo();
+            fetchFriends();
+            fetchPosts();
+            fetchEvents();
+        }
+
         private void fetchUserInfo()
         {
             profilePicture.LoadAsync(m_LoggedInUser.PictureNormalURL);
@@ -88,31 +97,10 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             }
         }
 
-       /* private void findFriendsByFirstName(string i_Name)
-        {
-            string name = i_Name;
-
-            toUnfriendListBox.Items.Clear();
-            toUnfriendListBox.DisplayMember = "Name";
-            foreach (User friend in m_LoggedInUser.Friends)
-            {
-                if (friend.FirstName.Equals(name)) {
-                    toUnfriendListBox.Items.Add(friend);
-                    friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
-                }
-            }
-
-            if (toUnfriendListBox.Items.Count == 0)
-            {
-                MessageBox.Show("You don't have any friends with this name");
-            }
-        }*/
-
         private void friendsToUnfriend()
         {
             toUnfriendListBox.Items.Clear();
             toUnfriendListBox.DisplayMember = "Name";
-
 
             foreach (User friend in m_LoggedInUser.Friends)
             {
@@ -130,15 +118,6 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             {
                 MessageBox.Show("No suggestions, your friends are great!");
             }
-        }
-
-        private void buttonLogin_Click(object sender, EventArgs e)
-        {
-            loginAndInit();
-            fetchUserInfo();
-            fetchFriends();
-            fetchPosts();
-            fetchEvents();
         }
 
         private void profilePicture_Click(object sender, EventArgs e)
@@ -165,7 +144,6 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         {
 
         }
-
 
         private void label2_Click(object sender, EventArgs e)
         {
