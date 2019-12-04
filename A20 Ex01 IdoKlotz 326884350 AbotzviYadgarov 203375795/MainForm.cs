@@ -174,24 +174,24 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             }
             else
             {
-                Dictionary<String, int> citiesDict = new Dictionary<String, int>();
+                Dictionary<City, int> citiesDict = new Dictionary<City, int>();
 
                 foreach (User friend in m_LoggedInUser.Friends)
                 {
-                    if (citiesDict.ContainsKey(friend.Location.Location.City))
+                    if (citiesDict.ContainsKey(friend.Location))
                     {
-                        citiesDict[friend.Location.Location.City] += 1;
+                        citiesDict[friend.Location] += 1;
                     }
                     else
                     {
-                        citiesDict.Add(friend.Location.Location.City, 0);
+                        citiesDict.Add(friend.Location, 1);
                     }
                 }
 
                 toSeeCitiesListBox.Items.Add("The cities of your friends and amount:");
-                foreach (KeyValuePair<String, int> entry in citiesDict)
+                foreach (KeyValuePair<City, int> entry in citiesDict)
                 {
-                    toSeeCitiesListBox.Items.Add(String.Format("{0} there are {1} friends", entry.Key, entry.Value));
+                    toSeeCitiesListBox.Items.Add(String.Format("In {0} there are {1} friends", entry.Key.Name, entry.Value));
                 }
             }
         }
