@@ -58,6 +58,11 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             }
         }
 
+        private void logout()
+        {
+            FacebookService.Logout(null);
+        }
+
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             loginAndInit();
@@ -65,6 +70,12 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             fetchFriends();
             fetchPosts();
             fetchEvents();
+
+            if(m_LoggedInUser != null)
+            {
+                buttonLogin.Text = "Logout";
+                logout();
+            }
         }
 
         private void fetchUserInfo()
@@ -84,7 +95,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         private void fetchFriends()
         {
             friendsListBox.Items.Clear();
-            friendsListBox.DisplayMember = "Name";
+            friendsListBox.DisplayMember = "FirstName";
             foreach (User friend in m_LoggedInUser.Friends)
             {
                 friendsListBox.Items.Add(friend);
@@ -97,6 +108,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             }
         }
 
+        //throws exception
         private void friendsToUnfriend()
         {
             toUnfriendListBox.Items.Clear();
@@ -204,11 +216,11 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         private void fetchPosts()
         {
             postBox.Items.Clear();
+            postBox.DisplayMember = "Message";
 
-            foreach (User friend in m_LoggedInUser.Friends)
+            foreach (Post post in m_LoggedInUser.NewsFeed)
             {
-                postBox.Items.Add(friend.Posts[0]);
-                friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
+                postBox.Items.Add(post);
             }
 
             if (postBox.Items.Count == 0)
