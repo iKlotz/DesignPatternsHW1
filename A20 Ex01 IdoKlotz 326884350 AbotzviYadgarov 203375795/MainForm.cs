@@ -132,16 +132,6 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             }
         }
 
-        private void profilePicture_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
@@ -206,11 +196,6 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
                     toSeeCitiesListBox.Items.Add(String.Format("In {0} there are {1} friends", entry.Key.Name, entry.Value));
                 }
             }
-        }
-
-        private void postBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void fetchPosts()
