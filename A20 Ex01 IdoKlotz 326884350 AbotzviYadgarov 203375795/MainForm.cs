@@ -68,6 +68,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             loginAndInit();
             fetchUserInfo();
             fetchFriends();
+            //fetchCover();
             fetchPosts();
             fetchEvents();
 
@@ -132,21 +133,6 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             }
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ProfilePic_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -155,13 +141,13 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         private void buttonFriendsToUnfriend_Click(object sender, EventArgs e)
         {
             buttonFriendsToUnfriend.Text = "Friends who like Nickelback";
-            progressBar1.Increment(100);
+            friendsToUnfriendProgressBar.Increment(100);
             friendsToUnfriend();
         }
 
         private void buttonCityFriends_Click(object sender, EventArgs e)
         {
-            progressBar2.Increment(100);
+            friendsCitiesProgressBar.Increment(100);
             fetchCitiesFriends();
         }
 
@@ -214,26 +200,6 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             }
         }
 
-        private void postBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void myPostBox_TextChanged(object sender, EventArgs e)
         {
           
@@ -244,9 +210,9 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             try
             {
                 m_LoggedInUser.PostStatus(myPostBox.Text);
-                //Next line would publish our post to the server if facebook won't change privacy policy 
+                //Next line would publish our post to the server if facebook haven't changed their privacy policy 
                 //postBox.Items.Add(myPostBox.Text);
-            } catch (Exception exception)
+            } catch (Exception exc)
             {
                 MessageBox.Show("Please sign in first");
             }
@@ -269,12 +235,6 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             }
         }
 
-        private void eventsListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void fetchEvents()
         {
             eventsListBox.Items.Clear();
@@ -289,11 +249,6 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             {
                 eventsListBox.Items.Add("There are no events near you");
             }
-        }
-
-        private void friendsLabel_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
