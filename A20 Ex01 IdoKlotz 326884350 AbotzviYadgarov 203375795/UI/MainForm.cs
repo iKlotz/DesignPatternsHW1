@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 using Facebook;
+using System.Threading;
 
 namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
 {
@@ -24,6 +25,15 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void fetchFacebookInfo()
+        {
+            fetchUserInfo();
+            fetchFriends();
+            //fetchCover();
+            fetchPosts();
+            fetchEvents();
         }
 
         private void loginAndInit()
@@ -66,13 +76,9 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             loginAndInit();
-            fetchUserInfo();
-            fetchFriends();
-            //fetchCover();
-            fetchPosts();
-            fetchEvents();
+            new Thread(fetchFacebookInfo).Start();
 
-            if(m_LoggedInUser != null)
+            if (m_LoggedInUser != null)
             {
                 buttonLogin.Text = "Logout";
                 logout();
@@ -82,7 +88,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         private void fetchUserInfo()
         {
             profilePicture.LoadAsync(m_LoggedInUser.PictureNormalURL);
-            nameLabel.Text = String.Format("Hi, {0}", m_LoggedInUser.Name);
+            nameLabel.Invoke(new Action(() => nameLabel.Text = String.Format("Hi, {0}", m_LoggedInUser.Name)));
         }
 
         private void fetchCover()
@@ -95,11 +101,11 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
 
         private void fetchFriends()
         {
-            friendsListBox.Items.Clear();
+            postBox.Invoke(new Action(() => friendsListBox.Items.Clear()));
             friendsListBox.DisplayMember = "FirstName";
             foreach (User friend in m_LoggedInUser.Friends)
             {
-                friendsListBox.Items.Add(friend);
+                friendsListBox.Invoke(new Action(() => friendsListBox.Items.Add(friend)));
                 friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
             }
 
@@ -186,17 +192,17 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
 
         private void fetchPosts()
         {
-            postBox.Items.Clear();
+            postBox.Invoke(new Action(() => postBox.Items.Clear()));
             postBox.DisplayMember = "Message";
 
             foreach (Post post in m_LoggedInUser.NewsFeed)
             {
-                postBox.Items.Add(post);
+                postBox.Invoke(new Action(() => postBox.Items.Add(post)));
             }
 
             if (postBox.Items.Count == 0)
             {
-                postBox.Items.Add("No friends, no posts, no problem!");
+                postBox.Invoke(new Action(() => postBox.Items.Add("No friends, no posts, no problem!")));
             }
         }
 
@@ -237,17 +243,17 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
 
         private void fetchEvents()
         {
-            eventsListBox.Items.Clear();
+            eventsListBox.Invoke(new Action(() => eventsListBox.Items.Clear()));
 
             foreach (Event usersEvent in m_LoggedInUser.Events)
             {
-                eventsListBox.Items.Add(usersEvent.ToString());
+                eventsListBox.Invoke(new Action(() => eventsListBox.Items.Add(usersEvent.ToString())));
                 usersEvent.ReFetch(DynamicWrapper.eLoadOptions.Full);
             }
 
             if (eventsListBox.Items.Count == 0)
             {
-                eventsListBox.Items.Add("There are no events near you");
+                eventsListBox.Invoke(new Action(() => eventsListBox.Items.Add("There are no events near you")));
             }
         }
     }
