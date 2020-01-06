@@ -52,9 +52,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Logic\CityProxy.cs" />
+    <Compile Include="Logic\DesignBuilder\ConcreteDesignBuilderDark.cs" />
+    <Compile Include="Logic\DesignBuilder\ConcreteDesignBuilderGreen.cs" />
+    <Compile Include="Logic\DesignBuilder\DesignBuilder.cs" />
+    <Compile Include="Logic\DesignBuilder\ConcreteDesignBuilderBrown.cs" />
+    <Compile Include="Logic\DesignBuilder\Director.cs" />
     <Compile Include="Logic\FeatureUnfriendFacade.cs" />
     <Compile Include="Logic\FeatureCitiesFacade.cs" />
     <Compile Include="Logic\Manager.cs" />
+    <Compile Include="UI\FormDesign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormDesign.Designer.cs">
+      <DependentUpon>FormDesign.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +74,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="UI\FormDesign.resx">
+      <DependentUpon>FormDesign.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,5 +99,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,6 +11,7 @@ using FacebookWrapper.ObjectModel;
 using Facebook;
 using System.Threading;
 using A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795.Logic;
+using A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795.Logic.DesignBuilder;
 
 namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
 {
@@ -170,9 +171,40 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
 
         }
 
-        private void postBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void buttonGreenDesign_Click(object sender, EventArgs e)
+        {
+            Director director = new Director();
+            DesignBuilder green = new ConcreteDesignBuilderGreen();
+            director.Construct(green);
+            Form designForm = green.GetResult();
+            designForm.ShowDialog();
+        }
+
+        private void buttonBrownDesign_Click_1(object sender, EventArgs e)
+        {
+            Director director = new Director();
+            DesignBuilder brown = new ConcreteDesignBuilderBrown();
+            director.Construct(brown);
+            Form designForm = brown.GetResult();
+            designForm.ShowDialog();
+        }
+
+        private void buttonDarkDesign_Click(object sender, EventArgs e)
+        {
+            Director director = new Director();
+            DesignBuilder dark = new ConcreteDesignBuilderDark();
+            director.Construct(dark);
+            Form designForm = dark.GetResult();
+            designForm.ShowDialog();
         }
     }
 }
