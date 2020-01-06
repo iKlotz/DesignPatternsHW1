@@ -138,6 +138,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Welcome!";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // friendsLabel
             // 
@@ -216,6 +217,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.postBox.Name = "postBox";
             this.postBox.Size = new System.Drawing.Size(404, 184);
             this.postBox.TabIndex = 14;
+            this.postBox.SelectedIndexChanged += new System.EventHandler(this.postBox_SelectedIndexChanged);
             // 
             // friendsListBox
             // 
