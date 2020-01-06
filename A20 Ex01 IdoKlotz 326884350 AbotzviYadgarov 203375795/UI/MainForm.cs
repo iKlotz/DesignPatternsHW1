@@ -35,7 +35,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             fetchUserInfo();
             fetchFriends();
             fetchPosts();
-            fetchEvents();
+            //fetchEvents();
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -205,6 +205,20 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             director.Construct(dark);
             Form designForm = dark.GetResult();
             designForm.ShowDialog();
+        }
+
+        private void postBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(postBox.SelectedItem != null)
+            {
+                Event selectedPost = postBox.SelectedItem as Event;
+                textBoxPostEditor.Text = selectedPost.Description;
+            }
+        }
+
+        private void eventsListBox_Leave(object sender, EventArgs e)
+        {
+            (postBox.SelectedItem as Event).Description = textBoxPostEditor.Text;
         }
     }
 }

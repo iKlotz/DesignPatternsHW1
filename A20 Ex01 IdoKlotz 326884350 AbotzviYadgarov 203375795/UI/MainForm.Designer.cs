@@ -64,6 +64,8 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonGreenDesign = new System.Windows.Forms.Button();
+            this.labelEventEditor = new System.Windows.Forms.Label();
+            this.textBoxPostEditor = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -121,6 +123,8 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.labelEventEditor);
+            this.tabPage1.Controls.Add(this.textBoxPostEditor);
             this.tabPage1.Controls.Add(this.friendsLabel);
             this.tabPage1.Controls.Add(this.newsFeedLabel);
             this.tabPage1.Controls.Add(this.eventsLabel);
@@ -187,6 +191,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.eventsListBox.Name = "eventsListBox";
             this.eventsListBox.Size = new System.Drawing.Size(404, 144);
             this.eventsListBox.TabIndex = 18;
+            this.eventsListBox.Leave += new System.EventHandler(this.eventsListBox_Leave);
             // 
             // publishPostButton
             // 
@@ -224,8 +229,9 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.postBox.ItemHeight = 20;
             this.postBox.Location = new System.Drawing.Point(448, 216);
             this.postBox.Name = "postBox";
-            this.postBox.Size = new System.Drawing.Size(404, 184);
+            this.postBox.Size = new System.Drawing.Size(404, 124);
             this.postBox.TabIndex = 14;
+            this.postBox.SelectedIndexChanged += new System.EventHandler(this.postBox_SelectedIndexChanged);
             // 
             // friendsListBox
             // 
@@ -464,6 +470,22 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.buttonGreenDesign.UseVisualStyleBackColor = false;
             this.buttonGreenDesign.Click += new System.EventHandler(this.buttonGreenDesign_Click);
             // 
+            // labelEventEditor
+            // 
+            this.labelEventEditor.AutoSize = true;
+            this.labelEventEditor.Location = new System.Drawing.Point(444, 353);
+            this.labelEventEditor.Name = "labelEventEditor";
+            this.labelEventEditor.Size = new System.Drawing.Size(96, 20);
+            this.labelEventEditor.TabIndex = 41;
+            this.labelEventEditor.Text = "Event Editor";
+            // 
+            // textBoxPostEditor
+            // 
+            this.textBoxPostEditor.Location = new System.Drawing.Point(448, 376);
+            this.textBoxPostEditor.Name = "textBoxPostEditor";
+            this.textBoxPostEditor.Size = new System.Drawing.Size(404, 26);
+            this.textBoxPostEditor.TabIndex = 40;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -527,6 +549,8 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         private System.Windows.Forms.Button buttonDarkDesign;
         private System.Windows.Forms.Button buttonBrownDesign;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label labelEventEditor;
+        private System.Windows.Forms.TextBox textBoxPostEditor;
     }
 }
 
