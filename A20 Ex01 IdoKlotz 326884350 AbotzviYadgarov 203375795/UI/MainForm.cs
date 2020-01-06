@@ -130,7 +130,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             toSeeCitiesListBox.Items.Clear();
             toSeeCitiesListBox.DisplayMember = "Name";
             Dictionary<City, int> citiesDict = m_Manager.GetCitiesOfFriendsAndCount();
-            toSeeCitiesListBox.Items.Add("The cities of your friends and amount:");
+            toSeeCitiesListBox.Items.Add("The cities of your friends and amount:    ");
 
             foreach (KeyValuePair<City, int> entry in citiesDict)
             {
