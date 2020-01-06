@@ -33,7 +33,6 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         {
             fetchUserInfo();
             fetchFriends();
-            //fetchCover();
             fetchPosts();
             fetchEvents();
         }
@@ -63,14 +62,6 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             nameLabel.Invoke(new Action(() => nameLabel.Text = String.Format("Hi, {0}", m_Manager.User.Name)));
         }
 
-        private void fetchCover()
-        {
-            if(m_Manager.User.Cover.SourceURL != null)
-            {
-                coverPicture.LoadAsync(m_Manager.User.Cover.SourceURL);
-            }    
-        }
-
         private void fetchFriends()
         {
             postBox.Invoke(new Action(() => friendsListBox.Items.Clear()));
@@ -88,25 +79,6 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             }
         }
 
-        //throws exception
-        private void friendsToUnfriend()
-        {
-            toUnfriendListBox.Items.Clear();
-            toUnfriendListBox.DisplayMember = "Name";
-            List<User> friendsToUnfriend = m_Manager.GetFriendsToUnfriendByPage("6248267085"); //Nickelback facebook page
-
-            foreach (User friend in friendsToUnfriend)
-            {
-                toUnfriendListBox.Items.Add(friend);
-                friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
-            }
-
-            if (toUnfriendListBox.Items.Count == 0)
-            {
-                MessageBox.Show("No suggestions, your friends are great!");
-            }
-        }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -116,32 +88,13 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         {
             buttonFriendsToUnfriend.Text = "Friends who like Nickelback";
             friendsToUnfriendProgressBar.Increment(100);
-            friendsToUnfriend();
+            new FeatureUnfriendFacade { ListBox = toUnfriendListBox, Manager = m_Manager }.FriendsToUnfriend();
         }
 
         private void buttonCityFriends_Click(object sender, EventArgs e)
         {
             friendsCitiesProgressBar.Increment(100);
-            fetchCitiesFriends();
-        }
-
-        private void fetchCitiesFriends()
-        {
-            toSeeCitiesListBox.Items.Clear();
-            toSeeCitiesListBox.DisplayMember = "Name";
-            Dictionary<City, int> citiesDict = m_Manager.GetCitiesOfFriendsAndCount();
-            toSeeCitiesListBox.Items.Add("The cities of your friends and amount: ");
-
-            foreach (KeyValuePair<City, int> entry in citiesDict)
-            {
-                toSeeCitiesListBox.Items.Add(new CityProxy { City = entry.Key, Count = entry.Value });
-            }
-
-
-            if (m_Manager.User.Friends.Count == 0)
-            {
-                MessageBox.Show("No cities to show, you have no friends :(");
-            }
+            new FeatureCitiesFacade { ListBox = toSeeCitiesListBox, Manager = m_Manager }.FetchCitiesFriends();
         }
 
         private void fetchPosts()

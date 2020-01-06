@@ -43,7 +43,8 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795.Logic
         public void LoginAndInit()
         {
             LoginResult result = FacebookService.Login(k_AppId, r_Permissions);
-              if (!string.IsNullOrEmpty(result.AccessToken))
+
+            if (!string.IsNullOrEmpty(result.AccessToken))
             {
                 User = result.LoggedInUser;
             }
@@ -94,6 +95,5 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795.Logic
 
             return citiesDict;
         }
-
     }
 }
