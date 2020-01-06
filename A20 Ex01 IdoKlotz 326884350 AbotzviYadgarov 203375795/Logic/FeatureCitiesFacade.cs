@@ -28,7 +28,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795.Logic
             }
 
 
-            if (m_Manager.User.Friends.Count == 0)
+            if (Manager.User.Friends.Count == 0)
             {
                 MessageBox.Show("No cities to show, you have no friends :(");
             }
