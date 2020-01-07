@@ -28,12 +28,24 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label birthdayLabel;
+            System.Windows.Forms.Label emailLabel;
+            System.Windows.Forms.Label firstNameLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.Label nameLabel1;
             this.buttonLogin = new System.Windows.Forms.Button();
             this.myPostBox = new System.Windows.Forms.TextBox();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.birthdayLabel1 = new System.Windows.Forms.Label();
+            this.emailLabel1 = new System.Windows.Forms.Label();
+            this.firstNameLabel1 = new System.Windows.Forms.Label();
+            this.labelEventEditor = new System.Windows.Forms.Label();
+            this.textBoxPostEditor = new System.Windows.Forms.TextBox();
             this.friendsLabel = new System.Windows.Forms.Label();
             this.newsFeedLabel = new System.Windows.Forms.Label();
             this.eventsLabel = new System.Windows.Forms.Label();
@@ -64,18 +76,52 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonGreenDesign = new System.Windows.Forms.Button();
-            this.labelEventEditor = new System.Windows.Forms.Label();
-            this.textBoxPostEditor = new System.Windows.Forms.TextBox();
+            this.nameLabel2 = new System.Windows.Forms.Label();
+            this.imageSmallPictureBox = new System.Windows.Forms.PictureBox();
+            birthdayLabel = new System.Windows.Forms.Label();
+            emailLabel = new System.Windows.Forms.Label();
+            firstNameLabel = new System.Windows.Forms.Label();
+            nameLabel1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coverPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBoxTab2)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageSmallPictureBox)).BeginInit();
             this.SuspendLayout();
+            // 
+            // birthdayLabel
+            // 
+            birthdayLabel.AutoSize = true;
+            birthdayLabel.Location = new System.Drawing.Point(15, 108);
+            birthdayLabel.Name = "birthdayLabel";
+            birthdayLabel.Size = new System.Drawing.Size(48, 13);
+            birthdayLabel.TabIndex = 0;
+            birthdayLabel.Text = "Birthday:";
+            // 
+            // emailLabel
+            // 
+            emailLabel.AutoSize = true;
+            emailLabel.Location = new System.Drawing.Point(15, 131);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new System.Drawing.Size(35, 13);
+            emailLabel.TabIndex = 2;
+            emailLabel.Text = "Email:";
+            // 
+            // firstNameLabel
+            // 
+            firstNameLabel.AutoSize = true;
+            firstNameLabel.Location = new System.Drawing.Point(15, 80);
+            firstNameLabel.Name = "firstNameLabel";
+            firstNameLabel.Size = new System.Drawing.Size(60, 13);
+            firstNameLabel.TabIndex = 4;
+            firstNameLabel.Text = "First Name:";
             // 
             // buttonLogin
             // 
@@ -83,9 +129,10 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.buttonLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonLogin.Location = new System.Drawing.Point(884, 38);
+            this.buttonLogin.Location = new System.Drawing.Point(589, 25);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(130, 42);
+            this.buttonLogin.Size = new System.Drawing.Size(87, 27);
             this.buttonLogin.TabIndex = 0;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = false;
@@ -93,19 +140,21 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             // 
             // myPostBox
             // 
-            this.myPostBox.Location = new System.Drawing.Point(448, 38);
+            this.myPostBox.Location = new System.Drawing.Point(299, 25);
+            this.myPostBox.Margin = new System.Windows.Forms.Padding(2);
             this.myPostBox.Multiline = true;
             this.myPostBox.Name = "myPostBox";
-            this.myPostBox.Size = new System.Drawing.Size(404, 42);
+            this.myPostBox.Size = new System.Drawing.Size(271, 29);
             this.myPostBox.TabIndex = 1;
             this.myPostBox.TextChanged += new System.EventHandler(this.myPostBox_TextChanged);
             // 
             // logoPictureBox
             // 
             this.logoPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.BackgroundImage")));
-            this.logoPictureBox.Location = new System.Drawing.Point(20, 28);
+            this.logoPictureBox.Location = new System.Drawing.Point(13, 18);
+            this.logoPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.logoPictureBox.Name = "logoPictureBox";
-            this.logoPictureBox.Size = new System.Drawing.Size(106, 128);
+            this.logoPictureBox.Size = new System.Drawing.Size(71, 83);
             this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoPictureBox.TabIndex = 3;
             this.logoPictureBox.TabStop = false;
@@ -115,14 +164,17 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(-2, -2);
+            this.tabControl1.Location = new System.Drawing.Point(-1, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1064, 632);
+            this.tabControl1.Size = new System.Drawing.Size(888, 410);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage1
             // 
+            this.tabPage1.AutoScroll = true;
+            this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.labelEventEditor);
             this.tabPage1.Controls.Add(this.textBoxPostEditor);
             this.tabPage1.Controls.Add(this.friendsLabel);
@@ -144,22 +196,87 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.tabPage1.Controls.Add(this.buttonLogin);
             this.tabPage1.Controls.Add(this.myPostBox);
             this.tabPage1.Controls.Add(this.logoPictureBox);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1056, 599);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Size = new System.Drawing.Size(880, 384);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Welcome!";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.imageSmallPictureBox);
+            this.panel1.Controls.Add(nameLabel1);
+            this.panel1.Controls.Add(this.nameLabel2);
+            this.panel1.Controls.Add(birthdayLabel);
+            this.panel1.Controls.Add(this.birthdayLabel1);
+            this.panel1.Controls.Add(emailLabel);
+            this.panel1.Controls.Add(this.emailLabel1);
+            this.panel1.Controls.Add(firstNameLabel);
+            this.panel1.Controls.Add(this.firstNameLabel1);
+            this.panel1.Location = new System.Drawing.Point(704, 101);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(304, 181);
+            this.panel1.TabIndex = 42;
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.User);
+            // 
+            // birthdayLabel1
+            // 
+            this.birthdayLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Birthday", true));
+            this.birthdayLabel1.Location = new System.Drawing.Point(80, 108);
+            this.birthdayLabel1.Name = "birthdayLabel1";
+            this.birthdayLabel1.Size = new System.Drawing.Size(100, 23);
+            this.birthdayLabel1.TabIndex = 1;
+            // 
+            // emailLabel1
+            // 
+            this.emailLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Email", true));
+            this.emailLabel1.Location = new System.Drawing.Point(80, 131);
+            this.emailLabel1.Name = "emailLabel1";
+            this.emailLabel1.Size = new System.Drawing.Size(100, 23);
+            this.emailLabel1.TabIndex = 3;
+            // 
+            // firstNameLabel1
+            // 
+            this.firstNameLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "FirstName", true));
+            this.firstNameLabel1.Location = new System.Drawing.Point(80, 80);
+            this.firstNameLabel1.Name = "firstNameLabel1";
+            this.firstNameLabel1.Size = new System.Drawing.Size(100, 23);
+            this.firstNameLabel1.TabIndex = 5;
+            // 
+            // labelEventEditor
+            // 
+            this.labelEventEditor.AutoSize = true;
+            this.labelEventEditor.Location = new System.Drawing.Point(296, 229);
+            this.labelEventEditor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelEventEditor.Name = "labelEventEditor";
+            this.labelEventEditor.Size = new System.Drawing.Size(65, 13);
+            this.labelEventEditor.TabIndex = 41;
+            this.labelEventEditor.Text = "Event Editor";
+            // 
+            // textBoxPostEditor
+            // 
+            this.textBoxPostEditor.Location = new System.Drawing.Point(299, 244);
+            this.textBoxPostEditor.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPostEditor.Name = "textBoxPostEditor";
+            this.textBoxPostEditor.Size = new System.Drawing.Size(271, 20);
+            this.textBoxPostEditor.TabIndex = 40;
+            // 
             // friendsLabel
             // 
             this.friendsLabel.AutoSize = true;
             this.friendsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.friendsLabel.Location = new System.Drawing.Point(880, 122);
+            this.friendsLabel.Location = new System.Drawing.Point(587, 79);
+            this.friendsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.friendsLabel.Name = "friendsLabel";
-            this.friendsLabel.Size = new System.Drawing.Size(138, 22);
+            this.friendsLabel.Size = new System.Drawing.Size(93, 15);
             this.friendsLabel.TabIndex = 21;
             this.friendsLabel.Text = "Your friends are";
             // 
@@ -167,9 +284,10 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             // 
             this.newsFeedLabel.AutoSize = true;
             this.newsFeedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.newsFeedLabel.Location = new System.Drawing.Point(443, 188);
+            this.newsFeedLabel.Location = new System.Drawing.Point(295, 122);
+            this.newsFeedLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.newsFeedLabel.Name = "newsFeedLabel";
-            this.newsFeedLabel.Size = new System.Drawing.Size(111, 25);
+            this.newsFeedLabel.Size = new System.Drawing.Size(78, 17);
             this.newsFeedLabel.TabIndex = 20;
             this.newsFeedLabel.Text = "News Feed";
             // 
@@ -177,19 +295,20 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             // 
             this.eventsLabel.AutoSize = true;
             this.eventsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.eventsLabel.Location = new System.Drawing.Point(443, 408);
+            this.eventsLabel.Location = new System.Drawing.Point(295, 265);
+            this.eventsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.eventsLabel.Name = "eventsLabel";
-            this.eventsLabel.Size = new System.Drawing.Size(72, 25);
+            this.eventsLabel.Size = new System.Drawing.Size(51, 17);
             this.eventsLabel.TabIndex = 19;
             this.eventsLabel.Text = "Events";
             // 
             // eventsListBox
             // 
             this.eventsListBox.FormattingEnabled = true;
-            this.eventsListBox.ItemHeight = 20;
-            this.eventsListBox.Location = new System.Drawing.Point(448, 436);
+            this.eventsListBox.Location = new System.Drawing.Point(299, 283);
+            this.eventsListBox.Margin = new System.Windows.Forms.Padding(2);
             this.eventsListBox.Name = "eventsListBox";
-            this.eventsListBox.Size = new System.Drawing.Size(404, 144);
+            this.eventsListBox.Size = new System.Drawing.Size(271, 95);
             this.eventsListBox.TabIndex = 18;
             this.eventsListBox.Leave += new System.EventHandler(this.eventsListBox_Leave);
             // 
@@ -197,9 +316,10 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             // 
             this.publishPostButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
             this.publishPostButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.publishPostButton.Location = new System.Drawing.Point(777, 86);
+            this.publishPostButton.Location = new System.Drawing.Point(518, 56);
+            this.publishPostButton.Margin = new System.Windows.Forms.Padding(2);
             this.publishPostButton.Name = "publishPostButton";
-            this.publishPostButton.Size = new System.Drawing.Size(75, 31);
+            this.publishPostButton.Size = new System.Drawing.Size(50, 20);
             this.publishPostButton.TabIndex = 17;
             this.publishPostButton.Text = "Publish";
             this.publishPostButton.UseVisualStyleBackColor = false;
@@ -208,46 +328,51 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             // pollLabel
             // 
             this.pollLabel.AutoSize = true;
-            this.pollLabel.Location = new System.Drawing.Point(444, 157);
+            this.pollLabel.Location = new System.Drawing.Point(296, 102);
+            this.pollLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pollLabel.Name = "pollLabel";
-            this.pollLabel.Size = new System.Drawing.Size(227, 20);
+            this.pollLabel.Size = new System.Drawing.Size(150, 13);
             this.pollLabel.TabIndex = 16;
             this.pollLabel.Text = "Guys most common phrase is?";
             // 
             // coverPicture
             // 
             this.coverPicture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("coverPicture.BackgroundImage")));
-            this.coverPicture.Location = new System.Drawing.Point(174, 180);
+            this.coverPicture.Location = new System.Drawing.Point(116, 117);
+            this.coverPicture.Margin = new System.Windows.Forms.Padding(2);
             this.coverPicture.Name = "coverPicture";
-            this.coverPicture.Size = new System.Drawing.Size(150, 118);
+            this.coverPicture.Size = new System.Drawing.Size(100, 77);
             this.coverPicture.TabIndex = 15;
             this.coverPicture.TabStop = false;
             // 
             // postBox
             // 
             this.postBox.FormattingEnabled = true;
-            this.postBox.ItemHeight = 20;
-            this.postBox.Location = new System.Drawing.Point(448, 216);
+            this.postBox.Location = new System.Drawing.Point(299, 140);
+            this.postBox.Margin = new System.Windows.Forms.Padding(2);
             this.postBox.Name = "postBox";
-            this.postBox.Size = new System.Drawing.Size(404, 124);
+            this.postBox.Size = new System.Drawing.Size(271, 82);
             this.postBox.TabIndex = 14;
             this.postBox.SelectedIndexChanged += new System.EventHandler(this.postBox_SelectedIndexChanged);
             // 
             // friendsListBox
             // 
+            this.friendsListBox.DataSource = this.userBindingSource;
+            this.friendsListBox.DisplayMember = "FirstName";
             this.friendsListBox.FormattingEnabled = true;
-            this.friendsListBox.ItemHeight = 20;
-            this.friendsListBox.Location = new System.Drawing.Point(884, 156);
+            this.friendsListBox.Location = new System.Drawing.Point(589, 101);
+            this.friendsListBox.Margin = new System.Windows.Forms.Padding(2);
             this.friendsListBox.Name = "friendsListBox";
-            this.friendsListBox.Size = new System.Drawing.Size(130, 424);
+            this.friendsListBox.Size = new System.Drawing.Size(88, 277);
             this.friendsListBox.TabIndex = 12;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(677, 186);
+            this.radioButton2.Location = new System.Drawing.Point(451, 121);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(166, 24);
+            this.radioButton2.Size = new System.Drawing.Size(128, 17);
             this.radioButton2.TabIndex = 11;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "נא להיפטר ממסיחים";
@@ -256,9 +381,10 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(677, 157);
+            this.radioButton1.Location = new System.Drawing.Point(451, 102);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(117, 24);
+            this.radioButton1.Size = new System.Drawing.Size(81, 17);
             this.radioButton1.TabIndex = 10;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "I don\'t care!";
@@ -267,7 +393,8 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             // monthCalendar1
             // 
             this.monthCalendar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(157)))), ((int)(((byte)(195)))));
-            this.monthCalendar1.Location = new System.Drawing.Point(12, 323);
+            this.monthCalendar1.Location = new System.Drawing.Point(8, 210);
+            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(6);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 9;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
@@ -275,18 +402,20 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(28, 157);
+            this.nameLabel.Location = new System.Drawing.Point(19, 102);
+            this.nameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(24, 20);
+            this.nameLabel.Size = new System.Drawing.Size(17, 13);
             this.nameLabel.TabIndex = 8;
             this.nameLabel.Text = "Hi";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 137);
+            this.label2.Location = new System.Drawing.Point(19, 89);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 20);
+            this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 7;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -295,9 +424,10 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.profilePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.profilePicture.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.profilePicture.Cursor = System.Windows.Forms.Cursors.No;
-            this.profilePicture.Location = new System.Drawing.Point(20, 180);
+            this.profilePicture.Location = new System.Drawing.Point(13, 117);
+            this.profilePicture.Margin = new System.Windows.Forms.Padding(2);
             this.profilePicture.Name = "profilePicture";
-            this.profilePicture.Size = new System.Drawing.Size(134, 118);
+            this.profilePicture.Size = new System.Drawing.Size(91, 78);
             this.profilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.profilePicture.TabIndex = 5;
             this.profilePicture.TabStop = false;
@@ -306,9 +436,10 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             // 
             this.createPostLabel.AutoSize = true;
             this.createPostLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.createPostLabel.Location = new System.Drawing.Point(304, 48);
+            this.createPostLabel.Location = new System.Drawing.Point(203, 31);
+            this.createPostLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.createPostLabel.Name = "createPostLabel";
-            this.createPostLabel.Size = new System.Drawing.Size(115, 25);
+            this.createPostLabel.Size = new System.Drawing.Size(82, 17);
             this.createPostLabel.TabIndex = 4;
             this.createPostLabel.Text = "Create Post";
             // 
@@ -321,27 +452,30 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.tabPage2.Controls.Add(this.friendsToUnfriendProgressBar);
             this.tabPage2.Controls.Add(this.buttonFriendsToUnfriend);
             this.tabPage2.Controls.Add(this.buttonCityFriends);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1056, 599);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Size = new System.Drawing.Size(880, 384);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "New Features";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // friendsCitiesProgressBar
             // 
-            this.friendsCitiesProgressBar.Location = new System.Drawing.Point(144, 508);
+            this.friendsCitiesProgressBar.Location = new System.Drawing.Point(96, 330);
+            this.friendsCitiesProgressBar.Margin = new System.Windows.Forms.Padding(2);
             this.friendsCitiesProgressBar.Name = "friendsCitiesProgressBar";
-            this.friendsCitiesProgressBar.Size = new System.Drawing.Size(378, 28);
+            this.friendsCitiesProgressBar.Size = new System.Drawing.Size(252, 18);
             this.friendsCitiesProgressBar.TabIndex = 7;
             // 
             // logoPictureBoxTab2
             // 
             this.logoPictureBoxTab2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logoPictureBoxTab2.BackgroundImage")));
-            this.logoPictureBoxTab2.Location = new System.Drawing.Point(20, 28);
+            this.logoPictureBoxTab2.Location = new System.Drawing.Point(13, 18);
+            this.logoPictureBoxTab2.Margin = new System.Windows.Forms.Padding(2);
             this.logoPictureBoxTab2.Name = "logoPictureBoxTab2";
-            this.logoPictureBoxTab2.Size = new System.Drawing.Size(106, 128);
+            this.logoPictureBoxTab2.Size = new System.Drawing.Size(71, 83);
             this.logoPictureBoxTab2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoPictureBoxTab2.TabIndex = 6;
             this.logoPictureBoxTab2.TabStop = false;
@@ -349,26 +483,27 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             // toUnfriendListBox
             // 
             this.toUnfriendListBox.FormattingEnabled = true;
-            this.toUnfriendListBox.ItemHeight = 20;
-            this.toUnfriendListBox.Location = new System.Drawing.Point(528, 142);
+            this.toUnfriendListBox.Location = new System.Drawing.Point(352, 92);
+            this.toUnfriendListBox.Margin = new System.Windows.Forms.Padding(2);
             this.toUnfriendListBox.Name = "toUnfriendListBox";
-            this.toUnfriendListBox.Size = new System.Drawing.Size(379, 344);
+            this.toUnfriendListBox.Size = new System.Drawing.Size(254, 225);
             this.toUnfriendListBox.TabIndex = 4;
             // 
             // toSeeCitiesListBox
             // 
             this.toSeeCitiesListBox.FormattingEnabled = true;
-            this.toSeeCitiesListBox.ItemHeight = 20;
-            this.toSeeCitiesListBox.Location = new System.Drawing.Point(142, 142);
+            this.toSeeCitiesListBox.Location = new System.Drawing.Point(95, 92);
+            this.toSeeCitiesListBox.Margin = new System.Windows.Forms.Padding(2);
             this.toSeeCitiesListBox.Name = "toSeeCitiesListBox";
-            this.toSeeCitiesListBox.Size = new System.Drawing.Size(379, 344);
+            this.toSeeCitiesListBox.Size = new System.Drawing.Size(254, 225);
             this.toSeeCitiesListBox.TabIndex = 3;
             // 
             // friendsToUnfriendProgressBar
             // 
-            this.friendsToUnfriendProgressBar.Location = new System.Drawing.Point(528, 508);
+            this.friendsToUnfriendProgressBar.Location = new System.Drawing.Point(352, 330);
+            this.friendsToUnfriendProgressBar.Margin = new System.Windows.Forms.Padding(2);
             this.friendsToUnfriendProgressBar.Name = "friendsToUnfriendProgressBar";
-            this.friendsToUnfriendProgressBar.Size = new System.Drawing.Size(378, 28);
+            this.friendsToUnfriendProgressBar.Size = new System.Drawing.Size(252, 18);
             this.friendsToUnfriendProgressBar.TabIndex = 2;
             // 
             // buttonFriendsToUnfriend
@@ -376,9 +511,10 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.buttonFriendsToUnfriend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
             this.buttonFriendsToUnfriend.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonFriendsToUnfriend.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonFriendsToUnfriend.Location = new System.Drawing.Point(528, 95);
+            this.buttonFriendsToUnfriend.Location = new System.Drawing.Point(352, 62);
+            this.buttonFriendsToUnfriend.Margin = new System.Windows.Forms.Padding(2);
             this.buttonFriendsToUnfriend.Name = "buttonFriendsToUnfriend";
-            this.buttonFriendsToUnfriend.Size = new System.Drawing.Size(380, 42);
+            this.buttonFriendsToUnfriend.Size = new System.Drawing.Size(253, 27);
             this.buttonFriendsToUnfriend.TabIndex = 1;
             this.buttonFriendsToUnfriend.Text = "Friends To Unfriend";
             this.buttonFriendsToUnfriend.UseVisualStyleBackColor = false;
@@ -389,9 +525,10 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.buttonCityFriends.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
             this.buttonCityFriends.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonCityFriends.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonCityFriends.Location = new System.Drawing.Point(142, 95);
+            this.buttonCityFriends.Location = new System.Drawing.Point(95, 62);
+            this.buttonCityFriends.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCityFriends.Name = "buttonCityFriends";
-            this.buttonCityFriends.Size = new System.Drawing.Size(380, 42);
+            this.buttonCityFriends.Size = new System.Drawing.Size(253, 27);
             this.buttonCityFriends.TabIndex = 0;
             this.buttonCityFriends.Text = "Press to See Your Friend\'s Cities";
             this.buttonCityFriends.UseVisualStyleBackColor = false;
@@ -404,10 +541,11 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.tabPage3.Controls.Add(this.pictureBox1);
             this.tabPage3.Controls.Add(this.label1);
             this.tabPage3.Controls.Add(this.buttonGreenDesign);
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1056, 599);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Size = new System.Drawing.Size(880, 384);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Design";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -417,9 +555,10 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             // 
             this.buttonDarkDesign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
             this.buttonDarkDesign.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonDarkDesign.Location = new System.Drawing.Point(740, 256);
+            this.buttonDarkDesign.Location = new System.Drawing.Point(493, 166);
+            this.buttonDarkDesign.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDarkDesign.Name = "buttonDarkDesign";
-            this.buttonDarkDesign.Size = new System.Drawing.Size(184, 81);
+            this.buttonDarkDesign.Size = new System.Drawing.Size(123, 53);
             this.buttonDarkDesign.TabIndex = 6;
             this.buttonDarkDesign.Text = "See dark version";
             this.buttonDarkDesign.UseVisualStyleBackColor = false;
@@ -429,9 +568,10 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             // 
             this.buttonBrownDesign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
             this.buttonBrownDesign.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonBrownDesign.Location = new System.Drawing.Point(441, 256);
+            this.buttonBrownDesign.Location = new System.Drawing.Point(294, 166);
+            this.buttonBrownDesign.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBrownDesign.Name = "buttonBrownDesign";
-            this.buttonBrownDesign.Size = new System.Drawing.Size(184, 81);
+            this.buttonBrownDesign.Size = new System.Drawing.Size(123, 53);
             this.buttonBrownDesign.TabIndex = 5;
             this.buttonBrownDesign.Text = "See yellow version";
             this.buttonBrownDesign.UseVisualStyleBackColor = false;
@@ -440,9 +580,10 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(20, 28);
+            this.pictureBox1.Location = new System.Drawing.Point(13, 18);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(106, 128);
+            this.pictureBox1.Size = new System.Drawing.Size(71, 83);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -451,9 +592,10 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(197, 120);
+            this.label1.Location = new System.Drawing.Point(131, 78);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(727, 29);
+            this.label1.Size = new System.Drawing.Size(476, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Here you can check how this app would look like in different colors!";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -462,38 +604,50 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             // 
             this.buttonGreenDesign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
             this.buttonGreenDesign.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonGreenDesign.Location = new System.Drawing.Point(138, 256);
+            this.buttonGreenDesign.Location = new System.Drawing.Point(92, 166);
+            this.buttonGreenDesign.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGreenDesign.Name = "buttonGreenDesign";
-            this.buttonGreenDesign.Size = new System.Drawing.Size(184, 81);
+            this.buttonGreenDesign.Size = new System.Drawing.Size(123, 53);
             this.buttonGreenDesign.TabIndex = 0;
             this.buttonGreenDesign.Text = "See green version";
             this.buttonGreenDesign.UseVisualStyleBackColor = false;
             this.buttonGreenDesign.Click += new System.EventHandler(this.buttonGreenDesign_Click);
             // 
-            // labelEventEditor
+            // nameLabel1
             // 
-            this.labelEventEditor.AutoSize = true;
-            this.labelEventEditor.Location = new System.Drawing.Point(444, 353);
-            this.labelEventEditor.Name = "labelEventEditor";
-            this.labelEventEditor.Size = new System.Drawing.Size(96, 20);
-            this.labelEventEditor.TabIndex = 41;
-            this.labelEventEditor.Text = "Event Editor";
+            nameLabel1.AutoSize = true;
+            nameLabel1.Location = new System.Drawing.Point(15, 154);
+            nameLabel1.Name = "nameLabel1";
+            nameLabel1.Size = new System.Drawing.Size(24, 13);
+            nameLabel1.TabIndex = 13;
+            nameLabel1.Text = "City";
             // 
-            // textBoxPostEditor
+            // nameLabel2
             // 
-            this.textBoxPostEditor.Location = new System.Drawing.Point(448, 376);
-            this.textBoxPostEditor.Name = "textBoxPostEditor";
-            this.textBoxPostEditor.Size = new System.Drawing.Size(404, 26);
-            this.textBoxPostEditor.TabIndex = 40;
+            this.nameLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Location.Name", true));
+            this.nameLabel2.Location = new System.Drawing.Point(80, 154);
+            this.nameLabel2.Name = "nameLabel2";
+            this.nameLabel2.Size = new System.Drawing.Size(100, 23);
+            this.nameLabel2.TabIndex = 14;
+            // 
+            // imageSmallPictureBox
+            // 
+            this.imageSmallPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.userBindingSource, "ImageSmall", true));
+            this.imageSmallPictureBox.Location = new System.Drawing.Point(15, 3);
+            this.imageSmallPictureBox.Name = "imageSmallPictureBox";
+            this.imageSmallPictureBox.Size = new System.Drawing.Size(73, 74);
+            this.imageSmallPictureBox.TabIndex = 15;
+            this.imageSmallPictureBox.TabStop = false;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
-            this.ClientSize = new System.Drawing.Size(1059, 630);
+            this.ClientSize = new System.Drawing.Size(889, 410);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "facebook";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -501,6 +655,9 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.coverPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             this.tabPage2.ResumeLayout(false);
@@ -508,6 +665,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageSmallPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -551,6 +709,13 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelEventEditor;
         private System.Windows.Forms.TextBox textBoxPostEditor;
+        private System.Windows.Forms.BindingSource userBindingSource;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label birthdayLabel1;
+        private System.Windows.Forms.Label emailLabel1;
+        private System.Windows.Forms.Label firstNameLabel1;
+        private System.Windows.Forms.PictureBox imageSmallPictureBox;
+        private System.Windows.Forms.Label nameLabel2;
     }
 }
 

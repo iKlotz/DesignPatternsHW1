@@ -65,19 +65,21 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
 
         private void fetchFriends()
         {
-            postBox.Invoke(new Action(() => friendsListBox.Items.Clear()));
-            friendsListBox.Invoke(new Action(() => friendsListBox.DisplayMember = "FirstName"));
+            friendsListBox.Invoke(new Action(() => userBindingSource.DataSource = m_Manager.User.Friends));
+            //userBindingSource.DataSource = m_Manager.User.Friends;
+            //postBox.Invoke(new Action(() => friendsListBox.Items.Clear()));
+            //friendsListBox.Invoke(new Action(() => friendsListBox.DisplayMember = "FirstName"));
 
-            foreach (User friend in m_Manager.User.Friends)
-            {
-                friendsListBox.Invoke(new Action(() => friendsListBox.Items.Add(friend)));
-                friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
-            }
+            //foreach (User friend in m_Manager.User.Friends)
+            //{
+            //    friendsListBox.Invoke(new Action(() => friendsListBox.Items.Add(friend)));
+            //    friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
+            //}
 
-            if (m_Manager.User.Friends.Count == 0)
-            {
-                MessageBox.Show("No Friends to retrieve :(");
-            }
+            //if (m_Manager.User.Friends.Count == 0)
+            //{
+            //    MessageBox.Show("No Friends to retrieve :(");
+            //}
         }
 
         private void label2_Click(object sender, EventArgs e)
