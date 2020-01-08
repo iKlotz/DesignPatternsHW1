@@ -8,10 +8,9 @@ using A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795.UI;
 
 namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795.Logic.DesignBuilder
 {
-    class ConcreteDesignBuilderGreen : DesignBuilder
+    public class ConcreteDesignBuilderGreen : DesignBuilder
     {
-        public FormDesign m_DesignForm = new FormDesign();
-
+        private FormDesign m_DesignForm = new FormDesign();
 
         public override void SetBackgroundColor()
         {
@@ -35,6 +34,5 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795.Logic.DesignBuil
         {
             return m_DesignForm;
         }
-
     }
 }

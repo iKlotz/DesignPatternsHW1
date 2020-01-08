@@ -12,7 +12,6 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795.UI
 {
     public partial class FormDesign : Form
     {
-    
         public FormDesign()
         {
             InitializeComponent();
@@ -30,7 +29,6 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795.UI
             eventsListBox.BackColor = i_Color;
             postBox.BackColor = i_Color;
         }
-
 
         private void tabPage1_Click(object sender, EventArgs e)
         {

@@ -12,6 +12,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795.Logic
     public class FeatureUnfriendFacade
     {
         public Manager Manager { private get; set; }
+
         public ListBox ListBox { private get; set; }
 
         public void FriendsToUnfriend()

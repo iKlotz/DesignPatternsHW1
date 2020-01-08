@@ -11,6 +11,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795.Logic
     public class CityProxy
     {
         public City City { get; set; }
+
         public int Count { get; set; }
 
         public override string ToString()

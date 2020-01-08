@@ -12,6 +12,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795.Logic
     public class FeatureCitiesFacade
     {
         public Manager Manager { private get; set; }
+
         public ListBox ListBox { private get; set; }
 
         public void FetchCitiesFriends()
@@ -26,7 +27,6 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795.Logic
 
                 ListBox.Items.Add(new CityProxy { City = entry.Key, Count = entry.Value });
             }
-
 
             if (Manager.User.Friends.Count == 0)
             {
