@@ -61,20 +61,8 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795.Logic
 
         public List<User> GetFriendsToUnfriendByPage(string i_PageId)
         {
-            List<User> friendsToUnfriend = new List<User>();
-
-            foreach (User friend in User.Friends)
-            {
-                foreach (Page page in friend.LikedPages)
-                {
-                    if (page.Id.Equals(i_PageId)) 
-                    {
-                        friendsToUnfriend.Add(friend);
-                    }
-                }
-            }
-
-            return friendsToUnfriend;
+            FilterFriendsByLikedPage ToUnfriend = new FilterFriendsByLikedPage(User, i_PageId);
+            return ToUnfriend.m_Filtered;
         }
 
         public Dictionary<City, int> GetCitiesOfFriendsAndCount()
