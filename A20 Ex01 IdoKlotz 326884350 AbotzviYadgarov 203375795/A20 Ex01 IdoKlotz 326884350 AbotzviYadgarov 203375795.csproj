@@ -59,6 +59,8 @@
     <Compile Include="Logic\DesignBuilder\Director.cs" />
     <Compile Include="Logic\FeatureUnfriendFacade.cs" />
     <Compile Include="Logic\FeatureCitiesFacade.cs" />
+    <Compile Include="Logic\FriendsFilter.cs" />
+    <Compile Include="Logic\FilterFriendsByLikedPage.cs" />
     <Compile Include="Logic\Manager.cs" />
     <Compile Include="UI\FormDesign.cs">
       <SubType>Form</SubType>
