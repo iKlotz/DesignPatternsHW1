@@ -15,12 +15,19 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795.Logic
 
         public ListBox ListBox { private get; set; }
 
+        public SorterUtils SorterUtils { private get; set; }
+
         public void FetchCitiesFriends()
         {
             ListBox.Items.Clear();
             ListBox.DisplayMember = "Name";
             Dictionary<City, int> citiesDict = Manager.GetCitiesOfFriendsAndCount();
             ListBox.Items.Add("The cities of your friends and amount:");
+
+            if (SorterUtils != null)
+            {
+                citiesDict = SorterUtils.Sorter.Sort(citiesDict.ToArray());
+            }
 
             foreach (KeyValuePair<City, int> entry in citiesDict)
             {

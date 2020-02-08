@@ -58,12 +58,15 @@
     <Compile Include="Logic\DesignBuilder\DesignBuilder.cs" />
     <Compile Include="Logic\DesignBuilder\ConcreteDesignBuilderBrown.cs" />
     <Compile Include="Logic\DesignBuilder\Director.cs" />
+    <Compile Include="Logic\SorterUtils.cs" />
     <Compile Include="Logic\FeatureUnfriendFacade.cs" />
     <Compile Include="Logic\FeatureCitiesFacade.cs" />
     <Compile Include="Logic\FilterFriendsByCity.cs" />
     <Compile Include="Logic\FriendsFilter.cs" />
     <Compile Include="Logic\FilterFriendsByLikedPage.cs" />
     <Compile Include="Logic\Manager.cs" />
+    <Compile Include="Logic\SorterItem.cs" />
+    <Compile Include="Logic\Sorter.cs" />
     <Compile Include="UI\FormDesign.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -21,13 +21,17 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         public Manager m_Manager;
         private ClickStats m_ClickStats;
         private int m_NumOfClicks;
+        private SorterUtils m_SorterUtils;
 
         public MainForm()
         {
             m_Manager = Manager.Create();
             m_ClickStats = new ClickStats(this);
             InitializeComponent();
+            InitSorterMenu();
         }
+
+      
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -226,9 +230,26 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             (postBox.SelectedItem as Event).Description = textBoxPostEditor.Text;
         }
 
-        private void ColorButton_Click(object sender, EventArgs e)
+        private void colorButton_Click(object sender, EventArgs e)
         {
             ColorBox.Text = m_ClickStats.NumOfClicks.ToString();
+        }
+
+        private void InitSorterMenu()
+        {
+            m_SorterUtils = new SorterUtils();
+            comboBoxCitiesSorter.Items.Add(new SorterItem { Text = "Highest First", CommandDelegate = m_SorterUtils.HighestFirst });
+            comboBoxCitiesSorter.Items.Add(new SorterItem { Text = "Lowest First", CommandDelegate = m_SorterUtils.LowestFirst });
+        }
+
+        private void comboBoxCitiesSorter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            (comboBoxCitiesSorter.SelectedItem as SorterItem).Selected();
+            new FeatureCitiesFacade { ListBox = toSeeCitiesListBox, Manager = m_Manager, SorterUtils = m_SorterUtils }.FetchCitiesFriends();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
         }
     }
 }

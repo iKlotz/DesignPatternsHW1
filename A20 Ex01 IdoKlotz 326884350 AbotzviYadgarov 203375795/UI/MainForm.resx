@@ -171,7 +171,7 @@
         DBSGpi2ivwEEhfPACAIBIQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="logoPictureBoxTab2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAE0AAABNCAYAAADjCemwAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAW
         JQAAFiUBSVIk8AAACC5JREFUeF7tm4lvVEUcx/kPTDjLJYgWkPuQo7TlKgrIUUCucihyRGJMNEIUAoIJ
@@ -492,7 +492,7 @@
         ebodGtqO5EVWl0Ve6LaMBvPsMssyOC98saltu/Dj/wGVszGThCnmCwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="logoPictureBoxTab2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAE0AAABNCAYAAADjCemwAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAW
         JQAAFiUBSVIk8AAACC5JREFUeF7tm4lvVEUcx/kPTDjLJYgWkPuQo7TlKgrIUUCucihyRGJMNEIUAoIJ
