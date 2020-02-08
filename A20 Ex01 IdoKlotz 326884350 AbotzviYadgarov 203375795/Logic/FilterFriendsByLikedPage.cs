@@ -6,9 +6,9 @@ using FacebookWrapper.ObjectModel;
 
 namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795.Logic
 {
-    internal class FilterFriendsByLikedPage : FriendsFilter
+    public class FilterFriendsByLikedPage : FriendsFilter
     {
-        string m_PageID;
+        private string m_PageID;
 
         public FilterFriendsByLikedPage(User i_User, string i_PageID) : base(i_User)
         {
@@ -16,11 +16,16 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795.Logic
             ListFilter();
         }
 
-        public override void Filter()
+        public override void Filter(User i_Friend)
         {
-            if (m_Item.Id.Equals(this.m_PageID))
+            Current = i_Friend;
+
+            foreach (Page page in i_Friend.LikedPages)
             {
-               m_Filtered.Add(m_Current);
+                if (page.Id.Equals(m_PageID))
+                {
+                    Filtered.Add(Current);
+                }
             }
         }
     }
