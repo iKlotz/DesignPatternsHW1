@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Logic\CityProxy.cs" />
+    <Compile Include="Logic\ClickStats.cs" />
     <Compile Include="Logic\DesignBuilder\ConcreteDesignBuilderDark.cs" />
     <Compile Include="Logic\DesignBuilder\ConcreteDesignBuilderGreen.cs" />
     <Compile Include="Logic\DesignBuilder\DesignBuilder.cs" />

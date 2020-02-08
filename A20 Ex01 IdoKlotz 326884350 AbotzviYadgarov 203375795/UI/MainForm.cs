@@ -17,17 +17,30 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
 {
     public partial class MainForm : Form
     {
-        public Manager m_Manager ;
+        public event Action<int> ReportClickDelegate;
+        public Manager m_Manager;
+        private ClickStats m_ClickStats;
+        private int m_NumOfClicks;
 
         public MainForm()
         {
             m_Manager = Manager.Create();
+            m_ClickStats = new ClickStats(this);
             InitializeComponent();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void reportClicks()
+        {
+            m_NumOfClicks++;
+            if (ReportClickDelegate != null)
+            {
+                ReportClickDelegate.Invoke(m_NumOfClicks);
+            }
         }
 
         private void fetchFacebookInfo()
@@ -171,6 +184,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
 
         private void buttonGreenDesign_Click(object sender, EventArgs e)
         {
+            reportClicks();
             Director director = new Director();
             DesignBuilder green = new ConcreteDesignBuilderGreen();
             director.Construct(green);
@@ -180,6 +194,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
 
         private void buttonBrownDesign_Click_1(object sender, EventArgs e)
         {
+            reportClicks();
             Director director = new Director();
             DesignBuilder brown = new ConcreteDesignBuilderBrown();
             director.Construct(brown);
@@ -189,6 +204,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
 
         private void buttonDarkDesign_Click(object sender, EventArgs e)
         {
+            reportClicks();
             Director director = new Director();
             DesignBuilder dark = new ConcreteDesignBuilderDark();
             director.Construct(dark);
@@ -208,6 +224,11 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         private void eventsListBox_Leave(object sender, EventArgs e)
         {
             (postBox.SelectedItem as Event).Description = textBoxPostEditor.Text;
+        }
+
+        private void ColorButton_Click(object sender, EventArgs e)
+        {
+            ColorBox.Text = m_ClickStats.NumOfClicks.ToString();
         }
     }
 }
