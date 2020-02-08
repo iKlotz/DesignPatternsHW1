@@ -61,7 +61,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795.Logic
 
         public List<User> GetFriendsToUnfriendByPage(string i_PageId)
         {
-            FilterFriendsByLikedPage ToUnfriend = new FilterFriendsByLikedPage(User, i_PageId);
+            FriendsFilter ToUnfriend = new FilterFriendsByLikedPage(User, i_PageId);
             return ToUnfriend.m_Filtered;
         }
 
