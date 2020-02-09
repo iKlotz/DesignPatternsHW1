@@ -17,8 +17,8 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
 {
     public partial class MainForm : Form
     {
-        public event Action<int> ReportClickDelegate;
-        public Manager m_Manager;
+        private event Action<int> ReportClickDelegate;
+        private Manager m_Manager;
         private ClickStats m_ClickStats;
         private int m_NumOfClicks;
         private SorterUtils m_SorterUtils;
@@ -28,7 +28,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             m_Manager = Manager.Create();
             m_ClickStats = new ClickStats(this);
             InitializeComponent();
-            InitSorterMenu();
+            initSorterMenu();
         }
 
       
@@ -235,11 +235,12 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
             ColorBox.Text = m_ClickStats.NumOfClicks.ToString();
         }
 
-        private void InitSorterMenu()
+        private void initSorterMenu()
         {
             m_SorterUtils = new SorterUtils();
             comboBoxCitiesSorter.Items.Add(new SorterItem { Text = "Highest First", CommandDelegate = m_SorterUtils.HighestFirst });
             comboBoxCitiesSorter.Items.Add(new SorterItem { Text = "Lowest First", CommandDelegate = m_SorterUtils.LowestFirst });
+            comboBoxCitiesSorter.Items.Add(new SorterItem { Text = "News Sort Option", CommandDelegate = () => m_SorterUtils.Sorter = new Sorter((num1, num2) => num1 > num2)});
         }
 
         private void comboBoxCitiesSorter_SelectedIndexChanged(object sender, EventArgs e)
@@ -250,6 +251,7 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
 
         private void Button1_Click(object sender, EventArgs e)
         {
+
         }
     }
 }

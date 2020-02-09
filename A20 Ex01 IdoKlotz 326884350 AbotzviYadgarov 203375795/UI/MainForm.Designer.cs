@@ -757,4 +757,3 @@ namespace A20_Ex01_IdoKlotz_326884350_AbotzviYadgarov_203375795
         private System.Windows.Forms.ComboBox comboBoxCitiesSorter;
     }
 }
-
